@@ -29,7 +29,7 @@ public class Principal {
 
         System.out.println( arrayPerro[0].getRaza() );
     }
-    
+
 
 
 }
