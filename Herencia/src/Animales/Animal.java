@@ -33,7 +33,7 @@ public class Animal {
 
     }
     public void moverse(){
-        System.out.println("Vamos a pasear");
+        System.out.println("Vamos a pasear ");
 
     }
 }
