@@ -30,6 +30,7 @@ public class Principal  {
                     double saldo = scanner.nextDouble();
 
 
+
                     Celular celular=new Celular(name, ram, procesador, saldo );
                     arrayCelular[x]=celular;
 
