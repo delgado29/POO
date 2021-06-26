@@ -1,0 +1,23 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+
+import java.io.*;
+
+public class Principal extends Application {
+    public static void main(String[] args) {
+        launch(args);
+    }
+    @Override
+    public void start(Stage stage) throws Exception {
+    Ventana ventana=new Ventana(stage);Scene scene=new Scene(ventana.crearVentana());
+    stage.setHeight(600);
+    stage.setWidth(900);
+    stage.setTitle("Archivos");
+    stage.setScene(scene);
+    stage.show();
+
+    }
+
+}
