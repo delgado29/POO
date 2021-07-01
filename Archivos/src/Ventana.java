@@ -1,4 +1,5 @@
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -13,6 +14,8 @@ public class Ventana {
     TextField textArea;
     ListView listView1;
     ListView listView2;
+    String[] tLetra;
+    String[] letra;
     String[] renglones;
     public Ventana( Stage stage){ this.stage=stage; }
     public AnchorPane crearVentana(){
@@ -46,6 +49,25 @@ public class Ventana {
                     lblnombre.setText(propiedad[0]);
 
                 }
+            }
+        });
+        btnBuscar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                String texto=textArea.getText();
+                if(texto.equals("")){leerArchivo("./src/Datos.csv");}else{
+                    listView1.getItems().clear();
+                tLetra=textArea.getText().split("");
+                for(int x=2;x< renglones.length; x++) {
+                    String[] propiedad = renglones[x].split(",");
+                    letra = propiedad[0].split("");
+                    System.out.println(letra[0]);
+                    if(letra[0].equals(tLetra[0])){
+                            String[] posicion=renglones[x].split(",");
+                            listView1.getItems().add(posicion[0]);
+                    }
+                }
+            }
             }
         });
 
